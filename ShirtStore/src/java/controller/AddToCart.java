@@ -4,9 +4,14 @@
  */
 package controller;
 
+import business.LineItem;
+import business.Shirt;
 import business.User;
+import data.ShirtDB;
+import data.UserDB;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,19 +38,33 @@ public class AddToCart extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    response.setContentType("text/html;charset=UTF-8");
-    HttpSession session = request.getSession();
-    User u = (User) session.getAttribute("user");
-    if (u == null){
-        String 
-        request.setAttribute("checkAddCart", 1);
-        request.getRequestDispatcher("login.jsp").forward(request, response);
-    }
-    
+        response.setContentType("text/html;charset=UTF-8");
+        HttpSession session = request.getSession();
+        User u = (User) session.getAttribute("user");
+        String productIDstring = request.getParameter("productID");
+        if (u == null) {
+            session.setAttribute("productID", productIDstring);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
+        else{
+            
+//            List<LineItem> ListShirt = u.getCart().getProductList();
+            
+            LineItem item = new LineItem();
+            int productID = Integer.parseInt(productIDstring);
+            Shirt s = ShirtDB.selectShirtById(productID);
+            item.setProduct(s);
+            item.setQuantity(1);
+            item.setPriceUnit(s.getProductPrice());
+            u.getCart().addItem(item);
+            UserDB.update(u);
+            session.setAttribute("user", u);
+            request.getRequestDispatcher("/cart.jsp").forward(request, response);
+        }
+            
 
 //            request.getContextPath()
-        }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

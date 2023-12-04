@@ -1,5 +1,6 @@
-<%@ include file="/header.jsp" %>
 
+<%@ include file="/header.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!-- start content -->
 <div class="container p-3 my-5 clearfix ">
     <!-- Shopping cart table -->
@@ -13,6 +14,7 @@
                     <thead>
                         <tr>
                             <!-- Set columns width -->
+                            <th class="text-right py-3 px-4" style="width: 100px;">Image</th>
                             <th class="text-center py-3 px-4" style="min-width: 400px;">Product Name &amp; Details</th>
                             <th class="text-right py-3 px-4" style="width: 100px;">Price</th>
                             <th class="text-center py-3 px-4" style="width: 120px;">Quantity</th>
@@ -21,8 +23,30 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
+                            <c:forEach var="lineitem" items="${user.getCart().productList}">
+                            <tr>
+                                <td><img src="${lineitem.product.images[0].imageURL}" class="d-block ui-w-40 ui-bordered mr-4" alt=""></td>
+                                <td class="p-4">
+                                    <div class="media align-items-center">
+                                        <div class="media-body">
+                                            <a href="#" class="d-block text-dark">${lineitem.product.productName}</a>
+                                            <small>
+                                                <span class="text-muted">Color:</span>
+                                                <span class="ui-product-color ui-product-color-sm align-text-bottom" style="background:#000;"></span> &nbsp;
+                                                <span class="text-muted">Size: </span> ${lineitem.product.productSize} &nbsp;
+                                                <span class="text-muted">Color: </span> ${lineitem.product.productColor} &nbsp;
+                                                <span class="text-muted">Category: </span> ${lineitem.product.category.getCategoryName()}
+                                            </small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="text-right font-weight-semibold align-middle p-4">$${lineitem.product.productPrice}</td>
+                                <td class="align-middle p-4"><input type="text" class="form-control text-center" value="${lineitem.quantity}"></td>
+                                <td class="text-right font-weight-semibold align-middle p-4">$${lineitem.getPrice()}</td>
+                                <td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
+                            </tr>
+                        </c:forEach>
+<!--                        <tr>
                             <td class="p-4">
                                 <div class="media align-items-center">
                                     <img src="images/Air-Jordan-12-Retro-Cherry-2023-Product.webp" class="d-block ui-w-40 ui-bordered mr-4" alt="">
@@ -81,7 +105,7 @@
                             <td class="align-middle p-4"><input type="text" class="form-control text-center" value="1"></td>
                             <td class="text-right font-weight-semibold align-middle p-4">$20.55</td>
                             <td class="text-center align-middle px-0"><a href="#" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a></td>
-                        </tr>
+                        </tr>-->
 
                     </tbody>
                 </table>
@@ -100,14 +124,14 @@
                     </div>
                     <div class="text-right mt-4">
                         <label class="text-muted font-weight-normal m-0">Total price</label>
-                        <div class="text-large"><strong>$1164.65</strong></div>
+                        <div class="text-large"><strong>$${user.getCart().getTotal()}</strong></div>
                     </div>
                 </div>
             </div>
 
             <div class="float-right">
-                <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Back to shopping</button>
-                <button type="button" class="btn btn-lg btn-primary mt-2">Checkout</button>
+                <button type="button" class="btn btn-lg btn-secondary md-btn-flat mt-2 mr-3">Back to shopping</button>
+                <button type="button" class="btn btn-lg btn-success mt-2">Checkout</button>
             </div>
 
         </div>

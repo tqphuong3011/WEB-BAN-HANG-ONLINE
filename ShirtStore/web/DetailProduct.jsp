@@ -37,7 +37,7 @@
                     <h5 class="sizes">colors: ${detailShirt.productColor}</h5>
                     
                     <div class="action">
-                            <a href="addtocart" style="color: black;"><button class="add-to-cart btn btn-default" type="button">add to cart</button></a>
+                            <a href="addtocart?productID=${detailShirt.productID}" style="color: black;"><button class="add-to-cart btn btn-default" type="button">add to cart</button></a>
                             <button class="add-to-cart btn btn-default" type="button">buy now</button>
                             <button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
                     </div>

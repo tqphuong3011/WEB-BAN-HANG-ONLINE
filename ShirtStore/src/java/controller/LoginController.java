@@ -47,8 +47,8 @@ public class LoginController extends HttpServlet {
             url = SetNewPassword(request, response);
         } else if (action.equals("logout")) {
             HttpSession session = request.getSession();
-//            session.invalidate();
-            session.removeAttribute("user");
+            session.invalidate();
+//            session.removeAttribute("user");
             url = "/loadingIndex";
         } else if (action.equals("goToEdit")) {
             url = loadEditProfile(request, response);
@@ -152,7 +152,15 @@ public class LoginController extends HttpServlet {
             session.setAttribute("user", user);
             url = "/loadingIndex";
         }
-        return url;
+        try {
+            HttpSession session = request.getSession();
+            String productIDString = (String) session.getAttribute("productID");
+            int productID = Integer.parseInt(productIDString);
+            url = "/loadProductDetail?productID=" + productID;
+            return url;
+        } catch (NumberFormatException e) {
+            return url;
+        }
     }
 
     private String VerifyEmail(HttpServletRequest request,

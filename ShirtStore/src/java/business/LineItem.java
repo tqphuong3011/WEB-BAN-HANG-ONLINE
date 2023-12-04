@@ -22,18 +22,18 @@ public class LineItem implements Serializable{
     @OneToOne
     private Shirt product;
     private int quantity;
-    private double priceUnit;
+    private Long priceUnit;
 
     public LineItem() {
     }
 
-    public LineItem(Shirt product, int quantity, double priceUnit) {
+    public LineItem(Shirt product, int quantity, Long priceUnit) {
         this.product = product;
         this.quantity = quantity;
         this.priceUnit = priceUnit;
     }
 
-    public LineItem(Long lineItemID, Shirt product, int quantity, double priceUnit) {
+    public LineItem(Long lineItemID, Shirt product, int quantity, Long priceUnit) {
         this.lineItemID = lineItemID;
         this.product = product;
         this.quantity = quantity;
@@ -71,11 +71,11 @@ public class LineItem implements Serializable{
         return priceUnit;
     }
 
-    public void setPriceUnit(double priceUnit) {
+    public void setPriceUnit(Long priceUnit) {
         this.priceUnit = priceUnit;
     }
     
-    public double getAmount(){
+    public Long getPrice(){
         return priceUnit * quantity;
     }
 }
