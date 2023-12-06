@@ -3,7 +3,7 @@ Cách import database của đồ án
 1. Tải ShirtStoreDB.sql
 2. Import cho MySQL
 ![image](https://github.com/tqphuong3011/WEB-BAN-HANG-ONLINE/assets/122359573/e9c37676-3f25-441e-9deb-4330d0bc2efd)
-3. Chỉnh user, password, url
+3. Chỉnh user, password, url trong file persistence của project trong NETBEAN
 ![image](https://github.com/tqphuong3011/WEB-BAN-HANG-ONLINE/assets/122359573/24d399d6-0e11-4666-93d8-7b59b23682a9)
 4. Kết nối database từ NETBEAN
    
