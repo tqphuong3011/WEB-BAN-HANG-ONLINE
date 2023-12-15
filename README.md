@@ -1,5 +1,7 @@
 Nhóm em vô cùng xin lỗi vì đã nộp bài trễ 2 ngày ạ, mong thầy cô chấm bài này của nhóm em. 
-Chúc thầy cô một ngày vui vẻ, nhóm em xin cảm ơn ạ.
+Chúc thầy cô một ngày vui vẻ, nhóm em xin cảm ơn ạ. 
+# Link VIDEO BÁO CÁO
+https://drive.google.com/drive/folders/1Xwr3GoBYpVwfdEp22lyjDI55cNtuhsg0?usp=sharing
 # Xây dựng ứng dụng bán hàng áo
 Trần Quốc Phương - 21110847
 Phạm Quỳnh Như - 21110843
