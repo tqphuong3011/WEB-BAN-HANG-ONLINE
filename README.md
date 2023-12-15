@@ -1,5 +1,3 @@
-Nhóm em vô cùng xin lỗi vì đã nộp bài trễ 2 ngày ạ, mong thầy cô chấm bài này của nhóm em. 
-Chúc thầy cô một ngày vui vẻ, nhóm em xin cảm ơn ạ. 
 # Link VIDEO BÁO CÁO
 https://drive.google.com/drive/folders/1Xwr3GoBYpVwfdEp22lyjDI55cNtuhsg0?usp=sharing
 # Xây dựng ứng dụng bán hàng áo
@@ -13,4 +11,4 @@ Cách import database của đồ án
 4. Kết nối database từ NETBEAN
 
 
-![image](https://github.com/tqphuong3011/WEB-BAN-HANG-ONLINE/assets/122359573/7a421344-caaa-4532-bf54-420440af77a1)
+   ![image](https://github.com/tqphuong3011/WEB-BAN-HANG-ONLINE/assets/122359573/7a421344-caaa-4532-bf54-420440af77a1)
