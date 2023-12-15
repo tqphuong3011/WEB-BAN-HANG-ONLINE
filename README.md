@@ -1,12 +1,12 @@
 # Link VIDEO BÁO CÁO
 https://drive.google.com/drive/folders/1Xwr3GoBYpVwfdEp22lyjDI55cNtuhsg0?usp=sharing
+Trần Quốc Phương - 21110847
+Phạm Quỳnh Như - 21110843
 # SLICE BÁN CÁO
 ![image](https://github.com/tqphuong3011/WEB-BAN-HANG-ONLINE/assets/122359573/b08b55d9-5375-42c9-a243-e644d7aae063)
 ![image](https://github.com/tqphuong3011/WEB-BAN-HANG-ONLINE/assets/122359573/0d36ed4c-db8b-4862-8ced-77a7b18314c7)
 
 # Xây dựng ứng dụng bán hàng áo
-Trần Quốc Phương - 21110847
-Phạm Quỳnh Như - 21110843
 Tài khoản đăng nhập web: admin@gmail.com - Mật khẩu: 123456
 Cách import database của đồ án
 1. Tải ShirtStoreDB.sql
